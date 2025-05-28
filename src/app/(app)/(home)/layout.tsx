@@ -1,6 +1,6 @@
-import configPromise from '@payload-config'
+import configPromise from '@payload-config';
 import { getPayload } from 'payload';
-import { Category } from '@/payload-types/'
+import { Category } from '@/payload-types/';
 
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
@@ -19,7 +19,7 @@ const Layout = async ({ children } : Props) => {
     const data = await payload.find({
         collection: 'categories',
         depth: 1,
-        paginaiton: false,
+        pagination: false,
         where: {
           parent: {
             exists: false,
