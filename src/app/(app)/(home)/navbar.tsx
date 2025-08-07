@@ -32,7 +32,7 @@ const NavbarItem = ({
         <Button
         asChild
         variant="outline"
-        className={cn("bg-transparent h-full flex hover:bg-black hover:text-white shadow-none rounded-none hover:border-primary border-none px-3.5 text-lg w-auto", isActive && "bg-black text-white hover:bg-black hover:text-white")}
+        className={cn("bg-transparent h-full flex hover:bg-black hover:text-white shadow-none rounded-none hover:border-primary border-none px-3.5 text-lg w-auto   ", isActive && "bg-black text-white hover:bg-black hover:text-white")}
         >
         <Link href={href}>
             {children}      
