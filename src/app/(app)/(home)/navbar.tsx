@@ -86,14 +86,14 @@ export const Navbar = () => {
                 asChild 
                 variant="secondary"
                 className="border-black border-l border-t border-b border-r px-6 h-12 rounded-full bg-white hover:bg-gray-100 hover:text-black transition-colors text-lg">
-                    <Link href="/sign-in">
+                    <Link prefetch href="/sign-in">
                         Log in
                     </Link>
                 </Button>
                 <Button 
                 asChild
                 className="border-black border-l border-t border-b border-r px-6 h-12 rounded-full bg-black hover:bg-gray-800 hover:text-white transition-colors text-lg mr-4">
-                    <Link href="/sign-up">
+                    <Link prefetch href="/sign-up">
                         Start Selling
                     </Link>
                 </Button>
