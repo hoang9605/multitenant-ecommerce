@@ -4,9 +4,12 @@ import { Poppins } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useTRPC } from "@/trpc/client";
 
 import { NavbarSidebar } from "./navbar-sidebar";
 
@@ -54,6 +57,9 @@ export const Navbar = () => {
     const pathname = usePathname();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+    const trpc = useTRPC();
+    const session = useQuery(trpc.auth.session.queryOptions());
+
     return(
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
             <Link href="/" className="pl-6 flex items-center" >
@@ -80,12 +86,26 @@ export const Navbar = () => {
                     </NavbarItem> 
                 ))}
             </div>
-            <div className="hidden lg:flex items-center space-x-4">
 
+            {session.data?.user ? (
+                <div className="hidden lg:flex items-center space-x-4">
+                <Button 
+                    asChild
+                    className="border-black border-l border-t border-b border-r px-6 h-12 rounded-full bg-black hover:bg-gray-800 hover:text-white transition-colors text-lg mr-4">
+                    <Link href="/admin">
+                        Dashboard
+                    </Link>
+                </Button>
+
+                </div>
+            ):(
+
+            <div className="hidden lg:flex items-center space-x-4">
                 <Button 
                 asChild 
                 variant="secondary"
-                className="border-black border-l border-t border-b border-r px-6 h-12 rounded-full bg-white hover:bg-gray-100 hover:text-black transition-colors text-lg">
+                className="border-black border-l border-t border-b border-r px-6 h-12 rounded-full bg-white hover:bg-black hover:text-white transition-colors text-lg"
+                >
                     <Link prefetch href="/sign-in">
                         Log in
                     </Link>
@@ -98,6 +118,7 @@ export const Navbar = () => {
                     </Link>
                 </Button>
             </div>
+            )}
 
             <div className="flex lg:hidden items-center justify-center">
                 <Button
