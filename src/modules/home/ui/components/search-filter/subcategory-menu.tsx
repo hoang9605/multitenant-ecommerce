@@ -33,7 +33,7 @@ export const SubcategoryMenu = ({
             <div className="h-3 w-60" />
             <div 
             style={{ backgroundColor }}
-            className="w-60 text-black rounded-md overflow-hidden border">
+            className="w-60 text-black rounded-md overflow-hidden border border-black">
                 <div>
                     {category.subcategories?.map((subcategory: Category) => (
                         <Link 

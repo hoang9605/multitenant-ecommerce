@@ -3,9 +3,9 @@ import { Suspense } from 'react';
 
 import { getQueryClient, trpc } from "@/trpc/server";
 
-import { Footer } from "./footer";
-import { Navbar } from "./navbar";
-import { SearchFilter, SearchFiltersSkeleton } from "./search-filter";
+import { Footer } from "@/modules/home/ui/components/footer";
+import { Navbar } from "@/modules/home/ui/components/navbar";
+import { SearchFilter, SearchFiltersSkeleton } from "@/modules/home/ui/components/search-filter";
 
 
 
