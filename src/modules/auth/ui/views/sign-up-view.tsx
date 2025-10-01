@@ -85,7 +85,7 @@ export const SignUpView = () => {
                                 asChild
                                 variant="ghost"
                                 size="sm"
-                                className="text-base border-none underline"
+                                className="text-base border-none underline hover:bg-black hover:text-white"
                             >
                                 <Link prefetch href="/sign-in">
                                     Sign In

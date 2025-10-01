@@ -34,8 +34,8 @@ const NavbarItem = ({
     return (
         <Button
         asChild
-        variant="outline"
-        className={cn("bg-transparent h-full flex hover:bg-black hover:text-white shadow-none rounded-none hover:border-primary border-none px-3.5 text-lg w-auto   ", isActive && "bg-black text-white hover:bg-black hover:text-white")}
+        variant="link"
+        className={cn("bg-transparent h-full flex hover:underline shadow-none rounded-none hover:border-primary border-none px-3.5 text-lg w-auto   ", isActive && "underline")}
         >
         <Link href={href}>
             {children}      
@@ -61,7 +61,7 @@ export const Navbar = () => {
     const session = useQuery(trpc.auth.session.queryOptions());
 
     return(
-        <nav className="h-20 flex border-b justify-between font-medium bg-white">
+        <nav className="h-20 flex border-b border-gray-400 justify-between font-medium bg-white">
             <Link href="/" className="pl-6 flex items-center" >
             <span className={cn("text-5xl font-semibold", poppins.className )}>
             logo
@@ -74,7 +74,7 @@ export const Navbar = () => {
                 onOpenChange={setIsSidebarOpen}
             />
 
-            <div className="items-center hidden lg:flex w-full pl-5">
+            <div className="items-center hidden lg:flex w-full pl-5 justify-center">
                 {navbarItems.map((item)=>(
                     <NavbarItem 
                         key= {item.href}
