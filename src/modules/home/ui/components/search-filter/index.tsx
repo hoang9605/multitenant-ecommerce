@@ -31,7 +31,7 @@ export const SearchFilter = () => {
         )?.name || null;
 
     return (
-        <div className="px-4 lg:px-12 py-8 border-gray-400 border-b-2 border-t-2 flex flex-col gap-4 w-full" style={{
+        <div className="px-4 lg:px-12 py-8 border-gray-400 border-b-2 border-t flex flex-col gap-4 w-full" style={{
             backgroundColor: activeCategoryColor
         }}>
             <SearchInput />
