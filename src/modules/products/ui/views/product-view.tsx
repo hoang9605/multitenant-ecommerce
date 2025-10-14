@@ -2,17 +2,31 @@
 
 //TODO: add real ratings
 
-import { StarRating } from "@/components/star-rating";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { formatCurrency, generateTenantURL } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Fragment } from "react";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { LinkIcon, StarIcon, Stars } from "lucide-react";
-import { Darumadrop_One } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
-import { Fragment } from "react";
+
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
+import { StarRating } from "@/components/star-rating";
+import { formatCurrency, generateTenantURL } from "@/lib/utils";
+
+// import { CartButton } from "../components/cart-button";
+
+const CartButton = dynamic(
+    () => import("../components/cart-button").then(
+        (mod) => mod.CartButton,
+    ),
+    {
+        ssr: false,
+        loading: () => <Button disabled className="flex-1 bg-green-300">Add to cart</Button>
+    },
+);
+
 
 interface ProductViewProps {
     productId: string;
@@ -99,12 +113,10 @@ export const ProductView = ({ productId, tenantSlug }: ProductViewProps) => {
                         <div className="border-t lg:border-t-0 lg:border-l h-full border-black">
                             <div className="flex flex-col gap-4 p-6 border-b border-black">
                                 <div className="flex flex-row items-center gap-2">
-                                    <Button
-                                        variant="outline"
-                                        className="flex-1 bg-white"
-                                    >
-                                        Add to cart
-                                    </Button>
+                                    <CartButton 
+                                        productId={productId}
+                                        tenantSlug={tenantSlug}
+                                    />
                                     <Button
                                         className="size-12"
                                         variant="outline"
