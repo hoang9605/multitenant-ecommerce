@@ -43,7 +43,7 @@ export const SearchInput = ({
                     variant="secondary"
                     className="border-neutral-500 border-l border-t border-b border-r hover:bg-black hover:text-white"
                 >
-                    <Link href = "/library">
+                    <Link prefetch href = "/library">
                        <BookmarkCheckIcon />
                        Library
                     </Link>

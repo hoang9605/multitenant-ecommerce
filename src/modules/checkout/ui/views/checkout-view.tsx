@@ -44,7 +44,9 @@ export const CheckoutView = ({ tenantSlug }: CheckoutViewProps) => {
         },
     }));
 
+    // http://localhost:3000/tenants/demo2/checkout?success=true
     useEffect(() => {
+        console.log("Triggered")
         if (states.success) {
             setStates({ success: false, cancel: false });
             clearCart();
