@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
 
-import { formatCurrency, generateTenantURL } from "@/lib/utils";
 
 interface ProductCardProps {
     id: string;
@@ -13,7 +11,6 @@ interface ProductCardProps {
     tenantImageUrl?: string | null;
     reviewRating: number;
     reviewCount: number;
-    price: number;
 }
 
 export const ProductCard = ({
@@ -24,19 +21,10 @@ export const ProductCard = ({
     tenantImageUrl,
     reviewRating,
     reviewCount,
-    price
 }: ProductCardProps) => {
-    const router = useRouter();
-
-    const handleUserClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        router.push(generateTenantURL(tenantSlug));
-    };
 
     return (
-        <Link href={`${generateTenantURL(tenantSlug)}/products/${id}`}>
+        <Link href={`$/library/${id}`}>
             <div className="transition-transform transform hover:scale-101 hover:-translate-y-1 border rounded-md bg-white border-black overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-square border-b border-black">
                     <Image
@@ -49,7 +37,7 @@ export const ProductCard = ({
                 <div className="p-4 border-y flex flex-col gap-3 flex-1">
                     <h2 className="text-lg font-medium line-clamp-4">{name}</h2>
                     {/* TODO: Redirect to user shop page */}
-                    <div className="flex items-center gap-2" onClick={handleUserClick}>
+                    <div className="flex items-center gap-2">
                         {tenantImageUrl && (
                             <Image
                                 alt={tenantSlug}
@@ -69,14 +57,7 @@ export const ProductCard = ({
                             </p>
                         </div>
                     )}
-                </div>
-                <div className="p-4 border-black border-t">
-                    <div className="relative px-2 py-1 border underline w-fit">
-                        <p className="text-sm font-medium">
-                            {formatCurrency(price)}
-                        </p>
-                    </div>
-                </div>
+                </div>            
             </div>
         </Link>
     )

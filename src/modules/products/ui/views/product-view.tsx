@@ -15,8 +15,6 @@ import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/star-rating";
 import { formatCurrency, generateTenantURL } from "@/lib/utils";
 
-// import { CartButton } from "../components/cart-button";
-
 const CartButton = dynamic(
     () => import("../components/cart-button").then(
         (mod) => mod.CartButton,
@@ -27,7 +25,6 @@ const CartButton = dynamic(
     },
 );
 
-
 interface ProductViewProps {
     productId: string;
     tenantSlug: string;
@@ -35,12 +32,12 @@ interface ProductViewProps {
 
 export const ProductView = ({ productId, tenantSlug }: ProductViewProps) => {
     const trpc = useTRPC();
-    const { data } = useSuspenseQuery(trpc.products.getOne.queryOptions({ id: productId }))
+    const { data } = useSuspenseQuery(trpc.products.getOne.queryOptions({ id: productId }));
 
     return (
         <div className="px-4 lg:px-12 py-10">
             <div className="border border-black rounded-sm bg-white overflow-hidden">
-                <div className="relative aspect-[3.9] border-b">
+                <div className="relative aspect-[3.9] border-b border-black">
                     <Image 
                         src={data.image?.url || "/placeholder.png"}    
                         alt={data.name}
@@ -114,6 +111,7 @@ export const ProductView = ({ productId, tenantSlug }: ProductViewProps) => {
                             <div className="flex flex-col gap-4 p-6 border-b border-black">
                                 <div className="flex flex-row items-center gap-2">
                                     <CartButton 
+                                        isPurchased={data.isPurchased}
                                         productId={productId}
                                         tenantSlug={tenantSlug}
                                     />
