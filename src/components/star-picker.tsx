@@ -1,0 +1,61 @@
+"use client"
+
+import { useState } from "react";
+import { StarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { on } from "events";
+
+interface StarPickerProps {
+    value: number;
+    onChange: (value: number) => void;
+    disabled?: boolean;
+    className?: string;
+}
+
+export const StarPicker = ({
+    value =0,
+    onChange,
+    disabled,
+    className,
+}: StarPickerProps) => {
+    const [hoveredValue, setHoveredValue] = useState(0);
+
+    const handleChange = (value: number) => {
+        onChange?.(value);
+    };
+
+    return (
+        <div
+            className={cn(
+                "flex items-center",
+                disabled && "opacity-50 pointer-not-allowed",
+                className
+            )}
+        >
+            {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                    key={star}
+                    type="button"
+                    disabled={disabled}
+                    className={cn(
+                        "p-0.5 hover:scale-110 transition",
+                        !disabled && "cursor-pointer"
+                    )}
+                    onClick={() => handleChange(star)}
+                    onMouseEnter={() => setHoveredValue(star)}
+                    onMouseLeave={() => setHoveredValue(0)}
+                    >
+                    <StarIcon
+                        className={cn(
+                            "sixe-5",
+                            (hoveredValue || value) >= star
+                            ? "fill-black stroke-black"
+                            : "stroke-black"
+                        )}
+                    />
+                </button>
+            ))}
+        </div>
+    )
+};

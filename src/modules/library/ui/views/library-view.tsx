@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { ArrowLeftIcon } from "lucide-react";
 import { ProductList, ProductListSkeleton } from "../components/product-list";
 
-
 export const LibraryView = () => {
     return(
     <div className="min-h-screen bg-white">
