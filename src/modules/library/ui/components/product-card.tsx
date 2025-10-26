@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
 
-
 interface ProductCardProps {
     id: string;
     name: string;
@@ -24,7 +23,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
 
     return (
-        <Link href={`$/library/${id}`}>
+        <Link prefetch href={`/library/${id}`}>
             <div className="transition-transform transform hover:scale-101 hover:-translate-y-1 border rounded-md bg-white border-black overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-square border-b border-black">
                     <Image
