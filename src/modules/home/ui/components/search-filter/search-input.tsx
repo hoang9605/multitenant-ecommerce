@@ -48,7 +48,6 @@ export const SearchInput = ({
                     </Link>
                 </Button>
             )}
-            {/* TODO: add library button */}
         </div>
     )
 }
