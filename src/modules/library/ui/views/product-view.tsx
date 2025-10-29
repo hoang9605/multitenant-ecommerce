@@ -7,6 +7,8 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { useTRPC } from "@/trpc/client";
 import { ReviewSidebar } from "../components/review-sidebar";
 import { RichText } from "@payloadcms/richtext-lexical/react";
+import { Suspense } from "react";
+import { ReviewFormSkeleton } from "../components/review-form";
 
 interface Props {
     productId: string;
@@ -36,7 +38,9 @@ export const ProductView = ({ productId }: Props) => {
 
                 <div className="lg:col-span-2">
                     <div className="p-4 bg-white rounded-md border border-black gap-4">
-                        <ReviewSidebar productId={productId} />
+                        <Suspense fallback={<ReviewFormSkeleton />}>
+                            <ReviewSidebar productId={productId} />
+                        </Suspense>
                     </div>
                 </div>
                 <div className="lg:col-span-5">
@@ -55,5 +59,16 @@ export const ProductView = ({ productId }: Props) => {
     )
 };
 
-export default ProductView;
+export const ProductViewSkeleton = () => {
+    return (
+        <div className="min-h-screen bg-white">
+            <nav className="p-4 bg-[#f4f4f4] w-full border-b">
+                <div className="flex items-center gap-2">
+                    <ArrowLeftIcon className="sixe-4"/>
+                    <span className="text font-medium">Back to library</span>
+                </div>
+            </nav>
+        </div>
+    )
+}
 
