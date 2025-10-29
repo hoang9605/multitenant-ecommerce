@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 import { on } from "events";
 
 interface StarPickerProps {
-    value: number;
-    onChange: (value: number) => void;
+    value?: number;
+    onChange?: (value: number) => void;
     disabled?: boolean;
     className?: string;
 }
