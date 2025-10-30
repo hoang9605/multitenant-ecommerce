@@ -6,7 +6,7 @@ import { headers as getHeaders } from 'next/headers';
 
 
 import { cache } from 'react';
-import { trpc } from './server';
+
 export const createTRPCContext = cache(async () => {
   /**
    * @see: https://trpc.io/docs/server/context

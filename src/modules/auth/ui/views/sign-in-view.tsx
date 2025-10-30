@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/form";
 
 import { loginSchema  } from "@/modules/auth/schemas";    
-import { error } from "console";
 import { useRouter } from "next/navigation";
 
 const poppins  = Poppins({

@@ -3,7 +3,6 @@ import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
 import { getQueryClient, trpc } from '@/trpc/server';
 
-
 import { loadProductFilters } from '@/modules/products/seach-params';
 import { ProductListView } from '@/modules/products/ui/views/product-list-view';
 import { DEFAULT_LIMIT } from "@/constants";
