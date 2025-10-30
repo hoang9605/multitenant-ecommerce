@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { Fragment, useState } from "react";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { CheckCheckIcon, LinkIcon, StarIcon, Stars } from "lucide-react";
+import { CheckCheckIcon, LinkIcon, StarIcon } from "lucide-react";
 import { toast } from "sonner";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 

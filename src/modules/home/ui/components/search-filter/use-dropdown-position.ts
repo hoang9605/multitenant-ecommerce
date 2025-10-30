@@ -1,7 +1,7 @@
-import { Ref, RefObject } from "react";
+import { RefObject } from "react";
 
 export const useDropdownPosition = (
-    ref: Ref<HTMLDivElement | null> | RefObject<HTMLDivElement>
+    ref: RefObject<HTMLDivElement>
 ) => {
     const getDropdownPosition = () => {
         if (!ref.current) return { top: 0, left: 0 };

@@ -2,7 +2,6 @@ import { ChangeEvent } from "react";;
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { on } from "events";
 
 interface Props {
     minPrice?: string | null;

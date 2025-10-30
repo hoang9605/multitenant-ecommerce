@@ -25,7 +25,6 @@ import {
 } from "@/components/ui/form";
 
 import { registerSchema  } from "@/modules/auth/schemas";    
-import { error } from "console";
 
 const poppins  = Poppins({
     subsets: ["latin"],
