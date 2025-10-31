@@ -16,8 +16,10 @@ export const generateAuthCookie = async ({
         value: value,
         httpOnly: true,
         path: "/",
+        ...(process.env.NODE_ENV !== "production" && {
         sameSite: "none",
         domain: process.env.NEXT_PUBLIC_ROOT_DOMAIN,
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
+        }),
     });
 };
