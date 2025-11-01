@@ -104,7 +104,7 @@ export const Categories = ({data}: Props) => {
             <div ref={viewAllRef} className="shrink-0">
                 <Button
                 variant="link"
-                className={cn("border-none shadow-none bg-white text-black",
+                className={cn("border-none shadow-none text-black",
                 isActiveCategoryHidden && !isAnyHovered && "bg-black text-white",
                 )}
                 onClick={() => setIsSidebarOpen(true)}
