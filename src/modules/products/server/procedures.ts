@@ -8,7 +8,6 @@ import { Category, Media, Tenant } from "@/payload-types";
 import { baseProcedure,createTRPCRouter } from "@/trpc/init";
 
 import { sortValues } from "../seach-params";
-import { Search } from "lucide-react";
 
 export const productsRouter = createTRPCRouter({
     getOne: baseProcedure

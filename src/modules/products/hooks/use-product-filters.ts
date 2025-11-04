@@ -1,4 +1,3 @@
-import { clear } from 'console';
 import { useQueryStates, parseAsArrayOf, parseAsString, parseAsStringLiteral } from 'nuqs';
 
 const sortValues = ["curated", "trending", "hot_and_new"] as const;
