@@ -70,7 +70,7 @@ export const SignInView = () => {
                         <div className="flex items-center justify-between mb-8">
                             <Link href="/">
                                 <span className={cn("text-2xl font-semibold", poppins.className)}>
-                                    Logo
+                                    NEUCommerce
                                 </span>
                             </Link>
                             <Button
@@ -85,7 +85,7 @@ export const SignInView = () => {
                             </Button>
                         </div>
                         <h1 className="text-4xl font-medium">
-                            Welcom back to Logo.
+                            Welcom back to NEUCommerce.
                         </h1>
                         <FormField
                             name="email"
