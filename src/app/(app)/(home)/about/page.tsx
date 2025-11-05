@@ -1,5 +1,13 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Giới thiệu | NEU Commerce",
+  description: "Tìm hiểu về sứ mệnh, tầm nhìn và đội ngũ phát triển của chúng tôi.",
+};
+
 const Page = () => {
-    return (
+  return (
     <main className="min-h-screen bg-gray-50 py-16 px-6">
       <section className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
@@ -17,16 +25,21 @@ const Page = () => {
           </h2>
           <p className="text-gray-600 leading-relaxed">
             Chúng tôi mong muốn xây dựng một nền tảng thương mại điện tử hiện đại, giúp người bán dễ dàng tiếp cận khách hàng, 
-            đồng thời mang lại cho người mua trải nghiệm nhanh chóng và đáng tin cậy.  
+            đồng thời mang lại cho người mua trải nghiệm nhanh chóng và đáng tin cậy.
             <br />
             <br />
-            Sứ mệnh của chúng tôi là <span className="font-semibold text-blue-600">kết nối mọi người thông qua công nghệ</span> 
-            — tạo nên một hệ sinh thái thương mại công bằng, minh bạch và hiệu quả.
+            Sứ mệnh của chúng tôi là{" "}
+            <span className="font-semibold text-blue-600">
+              kết nối mọi người thông qua công nghệ
+            </span>
+            {" "}– tạo nên một hệ sinh thái thương mại công bằng, minh bạch và hiệu quả.
           </p>
         </div>
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
           alt="Team working together"
+          width={500}
+          height={350}
           className="rounded-xl shadow-sm"
         />
       </section>
@@ -58,15 +71,15 @@ const Page = () => {
           Xin cảm ơn tất cả người dùng và cộng đồng đã đồng hành, góp ý và giúp chúng tôi hoàn thiện từng ngày.
           Mọi đóng góp của bạn là nguồn động lực lớn để chúng tôi tiếp tục phát triển.
         </p>
-        <a
+        <Link
           href="/"
           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition"
         >
           Quay lại trang chủ
-        </a>
+        </Link>
       </section>
     </main>
   );
-}
+};
 
 export default Page;
