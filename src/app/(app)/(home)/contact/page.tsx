@@ -98,7 +98,7 @@ const ContactPage = () => {
           <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
           <div className="space-y-4">
             <div>
-              <p className="text-gray-600">Email: <a href="mailto:support@neucommerce.com" className="text-black hover:underline">support@neucommerce.com</a></p>
+              <p className="text-gray-600">Email: <a href="mailto:support@eduverse.com" className="text-black hover:underline">support@eduverse.com</a></p>
             </div>
             <div>
               <p className="text-gray-600">Hotline: <a href="tel:+842812345678" className="text-black hover:underline">+84 28 1234 5678</a></p>
