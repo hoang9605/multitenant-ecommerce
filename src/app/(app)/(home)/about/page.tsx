@@ -1,85 +1,94 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Metadata for SEO
 export const metadata = {
-  title: "Giới thiệu | NEU Commerce",
-  description: "Tìm hiểu về sứ mệnh, tầm nhìn và đội ngũ phát triển của chúng tôi.",
+  title: "About Us | NEU Commerce",
+  description:
+    "Explore the mission, vision, and creative team of NEU Commerce – a pioneering multi-tenant e-commerce platform.",
 };
 
-const Page = () => {
+// Reusable Section Heading
+const SectionHeading = ({ title, highlight }: { title: string; highlight?: string }) => (
+  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
+    {title} {highlight && <span className="text-black">{highlight}</span>}
+  </h2>
+);
+
+const AboutPage = () => {
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-6">
-      <section className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Giới thiệu về <span className="text-blue-600">NEU Commerce</span>
-        </h1>
-        <p className="text-gray-600 text-lg mb-10">
-          Nơi mang đến trải nghiệm mua sắm trực tuyến tiện lợi, an toàn và cá nhân hóa cho mọi người dùng.
+    <main className="min-h-screen bg-gray-50 pt-12">
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 py-12 text-center">
+        <SectionHeading title="About" highlight="NEU Commerce" />
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          NEU Commerce is an advanced multi-tenant platform, delivering secure and flexible shopping and business experiences for all users.
         </p>
       </section>
 
-      <section className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center bg-white shadow-md rounded-2xl p-10 mb-16">
-        <div>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-            💡 Ý tưởng & Sứ mệnh
-          </h2>
+      {/* Mission Section */}
+      <section className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+        {/* Mission & Vision Text */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Mission & Vision</h3>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            NEU Commerce is committed to building a multi-tenant e-commerce platform that connects sellers and buyers efficiently. Our mission is to{" "}
+            <span className="font-semibold text-black">create a transparent and innovative ecosystem</span>, supporting sustainable business growth.
+          </p>
           <p className="text-gray-600 leading-relaxed">
-            Chúng tôi mong muốn xây dựng một nền tảng thương mại điện tử hiện đại, giúp người bán dễ dàng tiếp cận khách hàng, 
-            đồng thời mang lại cho người mua trải nghiệm nhanh chóng và đáng tin cậy.
-            <br />
-            <br />
-            Sứ mệnh của chúng tôi là{" "}
-            <span className="font-semibold text-blue-600">
-              kết nối mọi người thông qua công nghệ
-            </span>
-            {" "}– tạo nên một hệ sinh thái thương mại công bằng, minh bạch và hiệu quả.
+            Our vision is to become the leading multi-tenant platform, offering flexible solutions for businesses worldwide.
           </p>
         </div>
-        <Image
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-          alt="Team working together"
-          width={500}
-          height={350}
-          className="rounded-xl shadow-sm"
-        />
+
+        {/* Image */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
+          <Image
+            src="/mission-vision.png"
+            alt="Team collaborating on e-commerce platform"
+            width={500}
+            height={300}
+            className="rounded-lg"
+          />
+        </div>
       </section>
 
-      <section className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center mb-16">
-        <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">👨‍💻 Đội ngũ phát triển</h3>
-          <p className="text-gray-600">
-            Gồm những sinh viên đam mê công nghệ, luôn tìm cách tối ưu hóa trải nghiệm người dùng và áp dụng các công nghệ mới nhất.
+      {/* Values Section */}
+      <section className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+        <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Creative Team</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Our NEU Commerce team consists of passionate tech experts who innovate to optimize user experiences.
           </p>
         </div>
-        <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">🌍 Tầm nhìn</h3>
-          <p className="text-gray-600">
-            Trở thành nền tảng thương mại điện tử đa người dùng (multi-tenant) tiên phong trong lĩnh vực kinh doanh trực tuyến.
+        <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Global Vision</h3>
+          <p className="text-gray-600 leading-relaxed">
+            We aim to lead in the multi-tenant space, supporting businesses across the globe.
           </p>
         </div>
-        <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">🤝 Giá trị cốt lõi</h3>
-          <p className="text-gray-600">
-            Uy tín – Sáng tạo – Kết nối. Chúng tôi tin rằng thành công đến từ niềm tin và sự đổi mới không ngừng.
+        <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Core Values</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Integrity, innovation, and connection are the foundations of our value delivery.
           </p>
         </div>
       </section>
 
-      <section className="text-center max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">❤️ Lời cảm ơn</h2>
-        <p className="text-gray-600 mb-6">
-          Xin cảm ơn tất cả người dùng và cộng đồng đã đồng hành, góp ý và giúp chúng tôi hoàn thiện từng ngày.
-          Mọi đóng góp của bạn là nguồn động lực lớn để chúng tôi tiếp tục phát triển.
+      {/* CTA Section */}
+      <section className="max-w-7xl mx-auto px-4 py-12 text-center bg-gray-100 rounded-lg">
+        <SectionHeading title="Explore Now?" />
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
+          Join the NEU Commerce multi-tenant ecosystem and start your journey today!
         </p>
         <Link
           href="/"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition"
+          className="inline-block bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
         >
-          Quay lại trang chủ
+          Back to Home
         </Link>
       </section>
     </main>
   );
 };
 
-export default Page;
+export default AboutPage;

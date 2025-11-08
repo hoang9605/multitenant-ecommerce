@@ -1,9 +1,9 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useSuspenseQuery } from "@tanstack/react-query";
-
 import { useTRPC } from "@/trpc/client";
+
 
 import { DEFAULT_BG_COLOR } from "../constant"; 
 
@@ -13,12 +13,13 @@ import { BreadcrumbNavigation } from "./breadcrumb-navigation";
 import { useProductFilters } from "@/modules/products/hooks/use-product-filters";
 
 export const SearchFilter = () => {
+    const pathname = usePathname(); // 👈 lấy đường dẫn hiện tại
     const trpc = useTRPC();
     const { data } = useSuspenseQuery(trpc.categories.getMany.queryOptions());
-
     const [filters, setFilters] = useProductFilters();
-
     const params = useParams();
+    
+    const hideFilterRoutes = ["/about", "/contact", "/pricing"]; // 👈 danh sách trang cần ẩn
     const categoryParam = params.category as string | undefined;
     const activeCategory = categoryParam || "all";
 
@@ -32,6 +33,10 @@ export const SearchFilter = () => {
         activeCategoryData?.subcategories?.find(
             (subcategory) => subcategory.slug === activeSubcategory
         )?.name || null;
+
+    if (hideFilterRoutes.includes(pathname)) {
+        return null; // 👈 nếu đúng route → ẩn SearchFilter
+    }
 
     return (
         <div className="px-4 lg:px-12 py-8 border-gray-400 border-b-2 border-t flex flex-col gap-4 w-full" style={{
