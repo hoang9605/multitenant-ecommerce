@@ -3,9 +3,9 @@ import Link from "next/link";
 
 // Metadata for SEO
 export const metadata = {
-  title: "Contact Us | NEU Commerce",
+  title: "Contact Us | EduVerse",
   description:
-    "Get in touch with NEU Commerce for quick support. We're ready to partner with your business on our multi-tenant platform.",
+    "Get in touch with EduVerse for quick support. We're ready to partner with your business on our multi-tenant platform.",
 };
 
 // Reusable Section Heading
@@ -20,7 +20,7 @@ const ContactPage = () => {
     <main className="min-h-screen bg-gray-50 pt-12">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-12 text-center">
-        <SectionHeading title="Contact" highlight="NEU Commerce" />
+        <SectionHeading title="Contact" highlight="EduVerse" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
           We&apos;re here to support you—whether you&apos;re a seller, buyer, or partner—on our advanced multi-tenant platform. Contact us now!
         </p>
@@ -117,7 +117,7 @@ const ContactPage = () => {
           </div>
           <Image
             src="/contact-illustration.png"
-            alt="NEU Commerce support"
+            alt="EduVerse support"
             width={500}
             height={300}
             className="rounded-lg mt-6"
@@ -129,7 +129,7 @@ const ContactPage = () => {
       <section className="max-w-7xl mx-auto px-4 py-12 text-center bg-gray-100 rounded-lg">
         <SectionHeading title="Ready to Collaborate?" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
-          Become part of the NEU Commerce multi-tenant ecosystem. Start today!
+          Become part of the EduVerse multi-tenant ecosystem. Start today!
         </p>
         <Link
           href="/"

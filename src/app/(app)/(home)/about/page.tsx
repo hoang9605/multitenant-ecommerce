@@ -3,9 +3,9 @@ import Link from "next/link";
 
 // Metadata for SEO
 export const metadata = {
-  title: "About Us | NEU Commerce",
+  title: "About Us | EduVerse",
   description:
-    "Explore the mission, vision, and creative team of NEU Commerce – a pioneering multi-tenant e-commerce platform.",
+    "Explore the mission, vision, and creative team of EduVerse – a pioneering multi-tenant e-commerce platform.",
 };
 
 // Reusable Section Heading
@@ -20,9 +20,9 @@ const AboutPage = () => {
     <main className="min-h-screen bg-gray-50 pt-12">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-12 text-center">
-        <SectionHeading title="About" highlight="NEU Commerce" />
+        <SectionHeading title="About" highlight="EduVerse" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          NEU Commerce is an advanced multi-tenant platform, delivering secure and flexible shopping and business experiences for all users.
+          EduVerse is an advanced multi-tenant platform, delivering secure and flexible shopping and business experiences for all users.
         </p>
       </section>
 
@@ -32,7 +32,7 @@ const AboutPage = () => {
         <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
           <h3 className="text-2xl font-semibold text-gray-900 mb-6">Mission & Vision</h3>
           <p className="text-gray-600 leading-relaxed mb-4">
-            NEU Commerce is committed to building a multi-tenant e-commerce platform that connects sellers and buyers efficiently. Our mission is to{" "}
+            EduVerse is committed to building a multi-tenant e-commerce platform that connects sellers and buyers efficiently. Our mission is to{" "}
             <span className="font-semibold text-black">create a transparent and innovative ecosystem</span>, supporting sustainable business growth.
           </p>
           <p className="text-gray-600 leading-relaxed">
@@ -57,7 +57,7 @@ const AboutPage = () => {
         <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
           <h3 className="text-2xl font-semibold text-gray-900 mb-6">Creative Team</h3>
           <p className="text-gray-600 leading-relaxed">
-            Our NEU Commerce team consists of passionate tech experts who innovate to optimize user experiences.
+            Our EduVerse team consists of passionate tech experts who innovate to optimize user experiences.
           </p>
         </div>
         <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
@@ -78,7 +78,7 @@ const AboutPage = () => {
       <section className="max-w-7xl mx-auto px-4 py-12 text-center bg-gray-100 rounded-lg">
         <SectionHeading title="Explore Now?" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
-          Join the NEU Commerce multi-tenant ecosystem and start your journey today!
+          Join the EduVerse multi-tenant ecosystem and start your journey today!
         </p>
         <Link
           href="/"

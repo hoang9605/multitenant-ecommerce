@@ -2,9 +2,9 @@ import Link from "next/link";
 
 // Metadata for SEO
 export const metadata = {
-  title: "Pricing | NEU Commerce",
+  title: "Pricing | EduVerse",
   description:
-    "Discover NEU Commerce's flexible pricing plans for our multi-tenant e-commerce platform. Choose the best plan for your business!",
+    "Discover EduVerse's flexible pricing plans for our multi-tenant e-commerce platform. Choose the best plan for your business!",
 };
 
 // Reusable Section Heading
@@ -63,7 +63,7 @@ const PricingPage = () => {
     <main className="min-h-screen bg-gray-50 pt-12">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-12 text-center">
-        <SectionHeading title="Pricing" highlight="NEU Commerce" />
+        <SectionHeading title="Pricing" highlight="EduVerse" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
           Flexible plans designed for your multi-tenant e-commerce needs. Start today and scale with ease. Last updated: {currentDate}.
         </p>
@@ -93,7 +93,7 @@ const PricingPage = () => {
       <section className="max-w-7xl mx-auto px-4 py-12 text-center bg-gray-100 rounded-lg">
         <SectionHeading title="Ready to Scale?" />
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
-          Choose a plan that fits your business and join the NEU Commerce multi-tenant ecosystem today!
+          Choose a plan that fits your business and join the EduVerse multi-tenant ecosystem today!
         </p>
         <Link
           href="/signup"
