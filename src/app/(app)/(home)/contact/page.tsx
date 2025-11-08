@@ -116,7 +116,7 @@ const ContactPage = () => {
             </div>
           </div>
           <Image
-            src="/contact-illustration.png"
+            src="/contact.jpg"
             alt="EduVerse support"
             width={500}
             height={300}

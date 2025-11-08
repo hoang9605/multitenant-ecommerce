@@ -43,7 +43,7 @@ const AboutPage = () => {
         {/* Image */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-black transition-colors duration-300">
           <Image
-            src="/mission-vision.png"
+            src="/about.jpg"
             alt="Team collaborating on e-commerce platform"
             width={500}
             height={300}
